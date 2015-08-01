@@ -21,11 +21,6 @@ srv:listen(80,function(conn)
 				gpio.write(wakeup_pin, gpio.HIGH)
 
             end
-            
-            if mcu_do == "Read+ADC" then
-            	adc_value = adc.read(adc_id)
-				print("ADC: ", adc_value)
-            end
         end
 
         --parse position POST value from header
