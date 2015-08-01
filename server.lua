@@ -38,12 +38,6 @@ srv:listen(80,function(conn)
         conn:send('<head><meta  content="text/html; charset=utf-8">\n')
         conn:send('<title>ESP8266 Blinker Thing</title></head>\n')
         conn:send('<body><h1>ESP8266 Blinker Thing!</h1>\n')
-       	
-        -- Labels
-        conn:send('<p>ADC Value: '..adc_value..'</p><br>')
-        conn:send('<p>PWM Frequency (Input High): '..adc_value..'Hz</p>')
-			conn:send('<p>or</p>')
-        conn:send('<p>PWM Duty Cycle (Input Low): '..(adc_value * 100 / 1024)..'%</p><br>')
 
        	-- Buttons 
        	conn:send('<form action="" method="POST">\n')
