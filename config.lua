@@ -6,12 +6,17 @@ wakeup_pin = 8
 gpio.mode(8, gpio.OUTPUT)
 gpio.write(wakeup_pin, gpio.HIGH)
 
-uart.setup( 0, 19200, 8, 0, 1, 0 )
+uart.setup( 0, 115200, 8, 0, 1, 0 )
 -- start
-uart.write( 0, 128)
-tmr.delay(50000)
-uart.write( 0, 130)
-tmr.delay(50000)
+
+function roomba_tx(a)
+    uart.write(0,string.char(a))
+    tmr.delay(50000)
+end
+
+roomba_tx(128)
+roomba_tx(130)
+roomba_tx(135)
 
 ESSID = 'APF_swooooosh'
 
