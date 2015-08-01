@@ -19,6 +19,14 @@ srv:listen(80,function(conn)
 				gpio.write(wakeup_pin, gpio.LOW)
 				tmr.delay(500000)
 				gpio.write(wakeup_pin, gpio.HIGH)
+            end
+            if mcu_do == "fahren" then 
+            	-- fahren
+				uart.write( 0, 137,0, 200, 128,0)
+				tmr.delay(500000)
+				uart.write( 0, 137,0, 0, 0,0)
+				tmr.delay(500000)
+
 
             end
         end
