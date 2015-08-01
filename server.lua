@@ -47,7 +47,7 @@ srv:listen(80,function(conn)
         -- Labels
         conn:send('<p>ADC Value: '..adc_value..'</p><br>')
         conn:send('<p>PWM Frequency (Input High): '..adc_value..'Hz</p>')
-	conn:send('<p>or</p>')
+			conn:send('<p>or</p>')
         conn:send('<p>PWM Duty Cycle (Input Low): '..(adc_value * 100 / 1024)..'%</p><br>')
 
        	-- Buttons 
