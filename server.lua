@@ -28,13 +28,22 @@ srv:listen(80,function(conn)
 				tmr.delay(500000)
 
 
+
             end
+
+            if mcu_do == "clean" then 
+				uart.write( 0, 135)
+ 				tmr.delay(500000)
+           	
+            end
+
         end
 
         --parse position POST value from header
         postparse={string.find(payload,"mcu_do=")}
         --If POST value exist, set LED power
         if postparse[2]~=nil then esp_update()end
+
 
 
 		-- CREATE WEBSITE --
@@ -51,7 +60,7 @@ srv:listen(80,function(conn)
        	conn:send('<form action="" method="POST">\n')
        	conn:send('<input type="submit" name="mcu_do" value="wakeup">\n')
         conn:send('<input type="submit" name="mcu_do" value="fahren">\n')
-        conn:send('<input type="submit" name="mcu_do" value="musik">\n')
+        conn:send('<input type="submit" name="mcu_do" value="clean">\n')
         conn:send('</body></html>\n')
         conn:on("sent", function(conn) conn:close() end)
 	end)
