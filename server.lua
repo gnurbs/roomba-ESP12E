@@ -5,24 +5,24 @@ print("Starting Web Server...")
 -- Create a server object with 30 second timeout
 srv = net.createServer(net.TCP, 30)
 
--- server listen on 80, 
+-- server listen on 80,
 -- if data received, print data to console,
 -- then serve up a sweet little website
 srv:listen(80,function(conn)
 	conn:on("receive", function(conn, payload)
 		--print(payload) -- Print data from browser to serial terminal
-	
+
 		function esp_update()
             mcu_do=string.sub(payload,postparse[2]+1,#payload)
-            
-            if mcu_do == "wakeup" then 
+
+            if mcu_do == "wakeup" then
 				gpio.write(wakeup_pin, gpio.LOW)
 				tmr.delay(500000)
 				gpio.write(wakeup_pin, gpio.HIGH)
             end
-            if mcu_do == "fahren" then 
+            if mcu_do == "fahren" then
             	-- fahren
-				uart.write( 0, 137,0, 200, 128,0)
+				uart.write( 0, string.char(137,0, 200, 128,0))
 				tmr.delay(500000)
 				uart.write( 0, 137,0, 0, 0,0)
 				tmr.delay(500000)
@@ -31,10 +31,10 @@ srv:listen(80,function(conn)
 
             end
 
-            if mcu_do == "clean" then 
-				uart.write( 0, 135)
+            if mcu_do == "clean" then
+				uart.write(0, string.char(135))
  				tmr.delay(500000)
-           	
+
             end
 
         end
@@ -47,7 +47,7 @@ srv:listen(80,function(conn)
 
 
 		-- CREATE WEBSITE --
-        
+
         -- HTML Header Stuff
         conn:send('HTTP/1.1 200 OK\n\n')
         conn:send('<!DOCTYPE HTML>\n')
@@ -56,7 +56,7 @@ srv:listen(80,function(conn)
         conn:send('<title>ESP8266 Blinker Thing</title></head>\n')
         conn:send('<body><h1>ESP8266 Blinker Thing!</h1>\n')
 
-       	-- Buttons 
+       	-- Buttons
        	conn:send('<form action="" method="POST">\n')
        	conn:send('<input type="submit" name="mcu_do" value="wakeup">\n')
         conn:send('<input type="submit" name="mcu_do" value="fahren">\n')
@@ -66,6 +66,6 @@ srv:listen(80,function(conn)
 	end)
 end)
 
-                  
+
 
 
