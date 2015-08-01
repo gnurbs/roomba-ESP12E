@@ -24,8 +24,6 @@ srv:listen(80,function(conn)
             
             if mcu_do == "Read+ADC" then
             	adc_value = adc.read(adc_id)
-
-				end
 				print("ADC: ", adc_value)
             end
         end
