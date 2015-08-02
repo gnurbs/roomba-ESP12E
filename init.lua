@@ -1,7 +1,10 @@
 dofile('config.lua')
-node.led(0)
+
+gpio.mode(0,gpio.OUTPUT)
+gpio.write(0,gpio.LOW) -- low is the new high, i.e. LED on
+
 wifi.setmode(wifi.STATION)
 wifi.sta.config(ESSID,PSK)
-ip = wifi.sta.getip()
+tmr.delay(500000)
 dofile('server.lua')
 
