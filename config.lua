@@ -10,6 +10,7 @@ uart.setup( 0, 115200, 8, 0, 1, 0 )
 -- start
 
 function roomba_tx(a)
+    -- this sends a single byte to roomba - TODO: extend to arbitrary length!
     uart.write(0,string.char(a))
     tmr.delay(50000)
 end
