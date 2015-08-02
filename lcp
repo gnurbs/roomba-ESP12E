@@ -1,0 +1,1 @@
+python luatool.py -f $1 -t $1 -b 115200
