@@ -7,4 +7,4 @@ wifi.setmode(wifi.STATION)
 wifi.sta.config(ESSID,PSK)
 tmr.delay(500000)
 dofile('server.lua')
-
+dofile('uart_rx_timeout.lua')
