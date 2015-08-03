@@ -4,3 +4,6 @@
 [submodule "esptool"]
 	path = esptool
 	url = https://github.com/themadinventor/esptool.git
+[submodule "hardware/kicad-ESP8266"]
+	path = hardware/kicad-ESP8266
+	url = https://github.com/jdunmire/kicad-ESP8266.git
