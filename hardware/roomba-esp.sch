@@ -28,8 +28,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:lm2596_module
-LIBS:roomba-esp-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -368,21 +366,21 @@ Text Label 6200 4500 0    60   ~ 0
 GPIO12
 Text Label 6200 4600 0    60   ~ 0
 GPIO13
-Text Label 6200 4700 0    60   ~ 0
-GPIO14
 Text Label 7300 4600 0    60   ~ 0
-GPIO16
-Text Label 7300 4500 0    60   ~ 0
-CS0
+GPIO14
 Text Label 7300 4400 0    60   ~ 0
-MISO
+GPIO16
 Text Label 7300 4300 0    60   ~ 0
-MOSI
+CS0
 Text Label 7300 4200 0    60   ~ 0
-SCK
+MISO
 Text Label 7300 4100 0    60   ~ 0
-RESET
+MOSI
 Text Label 7300 4000 0    60   ~ 0
+SCK
+Text Label 7300 4700 0    60   ~ 0
+RESET
+Text Label 6200 4700 0    60   ~ 0
 ADC
 Text Label 7300 3900 0    60   ~ 0
 GND
@@ -447,11 +445,11 @@ U 1 1 560084A0
 P 8900 4050
 F 0 "P1" H 8900 4450 50  0000 C CNN
 F 1 "CONN_01X07" V 9000 4050 50  0000 C CNN
-F 2 "mini din:mini din 7" H 8900 4050 60  0001 C CNN
+F 2 "mini din:mini_DIN_7" H 8900 4050 60  0001 C CNN
 F 3 "" H 8900 4050 60  0000 C CNN
 	1    8900 4050
 	1    0    0    -1  
 $EndComp
-Text Label 7300 4700 0    60   ~ 0
+Text Label 7300 4500 0    60   ~ 0
 GPIO15
 $EndSCHEMATC
