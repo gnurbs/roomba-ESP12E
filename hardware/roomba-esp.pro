@@ -1,4 +1,4 @@
-update=So 27 Sep 2015 19:30:30 CEST
+update=Son 27 Sep 2015 23:07:17 CEST
 version=1
 last_client=kicad
 [pcbnew]
@@ -20,9 +20,6 @@ SolderMaskMinWidth=0.000000000000
 DrawSegmentWidth=0.200000000000
 BoardOutlineThickness=0.100000000000
 ModuleOutlineThickness=0.150000000000
-[cvpcb]
-version=1
-NetIExt=net
 [eeschema]
 version=1
 LibDir=
@@ -70,3 +67,6 @@ SpiceUseNetNumbers=0
 LabSize=60
 [general]
 version=1
+[cvpcb]
+version=1
+NetIExt=net
