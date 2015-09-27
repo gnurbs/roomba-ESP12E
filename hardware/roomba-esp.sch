@@ -28,6 +28,8 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:lm2596_module
+LIBS:ESP8266
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -58,9 +60,9 @@ VBat
 Text Label 8450 3850 0    60   ~ 0
 VBat
 Text Label 8450 3950 0    60   ~ 0
-RX
+RX_R
 Text Label 8450 4050 0    60   ~ 0
-TX
+TX_R
 Text Label 8450 4150 0    60   ~ 0
 DD
 Text Label 6400 2300 0    60   ~ 0
@@ -218,9 +220,9 @@ Wire Wire Line
 Wire Wire Line
 	8700 3850 8450 3850
 Wire Wire Line
-	8700 3950 8450 3950
+	7900 3950 8700 3950
 Wire Wire Line
-	8700 4050 8450 4050
+	8100 4050 8700 4050
 Wire Wire Line
 	8700 4150 8450 4150
 Wire Wire Line
@@ -452,4 +454,50 @@ F 3 "" H 8900 4050 60  0000 C CNN
 $EndComp
 Text Label 7300 4500 0    60   ~ 0
 GPIO15
+$Comp
+L R R3
+U 1 1 5606DDFD
+P 8100 4250
+F 0 "R3" V 8180 4250 50  0000 C CNN
+F 1 "R" V 8100 4250 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 8030 4250 30  0001 C CNN
+F 3 "" H 8100 4250 30  0000 C CNN
+	1    8100 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R4
+U 1 1 5606DE8E
+P 8100 4650
+F 0 "R4" V 8180 4650 50  0000 C CNN
+F 1 "R" V 8100 4650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 8030 4650 30  0001 C CNN
+F 3 "" H 8100 4650 30  0000 C CNN
+	1    8100 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 4050 8100 4100
+$Comp
+L GND #PWR011
+U 1 1 5606DFE7
+P 8100 4900
+F 0 "#PWR011" H 8100 4650 50  0001 C CNN
+F 1 "GND" H 8100 4750 50  0000 C CNN
+F 2 "" H 8100 4900 60  0000 C CNN
+F 3 "" H 8100 4900 60  0000 C CNN
+	1    8100 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 4800 8100 4900
+Wire Wire Line
+	7900 4450 8100 4450
+Wire Wire Line
+	8100 4400 8100 4500
+Connection ~ 8100 4450
+Text Label 7900 4450 0    60   ~ 0
+RX
+Text Label 7900 3950 0    60   ~ 0
+TX
 $EndSCHEMATC
