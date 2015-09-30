@@ -20,4 +20,5 @@ roomba_tx(130)
 roomba_tx(135)
 
 ESSID = 'APF_swooooosh'
+dofile('wpa_secret.lua')
 
