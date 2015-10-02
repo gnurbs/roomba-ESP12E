@@ -2,4 +2,5 @@
   (lib (name ESP8266)(type KiCad)(uri "$(KIPRJMOD)/kicad-ESP8266/ESP8266.pretty")(options "")(descr ""))
   (lib (name LM2596)(type KiCad)(uri "$(KIPRJMOD)/LM2596.pretty")(options "")(descr ""))
   (lib (name "mini din")(type KiCad)(uri "$(KIPRJMOD)/mini din.pretty")(options "")(descr ""))
+  (lib (name text_back)(type KiCad)(uri /home/arian-debian-ssd/projekte/roomba-esp12e/hardware/text_back.pretty)(options "")(descr ""))
 )
